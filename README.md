@@ -1,17 +1,30 @@
 # 📰 News Feed Aggregator — React + Spring Boot
 
-A full-stack web application that fetches and displays live news articles based on a user-provided topic, with rate limiting and deferred request handling.
+A full-stack web application that fetches and displays live news articles based on a user-provided topic, with built-in rate limiting and deferred request handling.
+
+---
+
+## ⚙️ How It Works
+
+This application integrates with [NewsAPI.org](https://newsapi.org) to fetch real-time news based on a topic entered by the user.
+
+### 🔄 Request Flow:
+- ✅ Each user is allowed **up to 5 API requests per minute**.
+- 🚧 If the user exceeds this limit:
+  - The excess request is **cached** using Caffeine.
+  - A background job runs every **60 seconds** to **process deferred requests** from the cache.
+- 🪄 Processed results are displayed in the **Deferred News** section of the UI.
 
 ---
 
 ## 📌 Features
 
-- 🔍 **Live News Fetching:** Users can search for real-time news by topic using NewsAPI.
-- 🚦 **Rate Limiting:** Each user can make up to 5 API calls per minute. Excess requests are deferred.
-- 💾 **Deferred Request Caching:** Extra requests are cached (using Caffeine) and processed in the background.
-- ⏳ **Scheduled Processing:** Cached requests are processed every minute via a scheduled background job.
-- ⚠️ **Frontend Feedback:** UI displays errors, warnings, and results in real-time.
-- 🌈 **Modern UI:** Built with React and TypeScript (Vite).
+- 🔍 **Live News Fetching:** Users can search for real-time news by topic.
+- 🚦 **Rate Limiting:** Automatically restricts users to 5 API calls/min.
+- 💾 **Deferred Request Caching:** Queues extra requests for later processing.
+- ⏳ **Scheduled Processing:** Executes every minute to handle overflow.
+- ⚠️ **Frontend Feedback:** React UI provides real-time alerts and results.
+- 🌈 **Modern UI:** Built with React (Vite + TypeScript).
 
 ---
 
@@ -29,5 +42,13 @@ A full-stack web application that fetches and displays live news articles based 
 
 ## 📷 Screenshots
 
+### 🔍 Live News Result
+![Live News](./screenshots/live-news.png)
+
+### 🔍 Rate Limit Exceeded
+![Live News](./screenshots/rate-limit.png)
+
+### 🕓 Deferred News Result
+![Deferred News](./screenshots/deferred.png)
 
 ---
