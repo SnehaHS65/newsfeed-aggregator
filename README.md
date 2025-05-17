@@ -42,13 +42,13 @@ This application integrates with [NewsAPI.org](https://newsapi.org) to fetch rea
 
 ## 📷 Screenshots
 
-### 🔍 Live News Result
-![Live News](./screenshots/live-news.png)
+<h4>🔍 Live News Result</h4>
+<img src="./screenshots/live-news.png" width="600"/>
 
-### 🔍 Rate Limit Exceeded
-![Live News](./screenshots/rate-limit.png)
+<h4>⚠️ Rate Limit Exceeded</h4>
+<img src="./screenshots/rate-limit.png" width="600"/>
 
-### 🕓 Deferred News Result
-![Deferred News](./screenshots/deferred.png)
+<h4>🕓 Deferred News Result</h4>
+<img src="./screenshots/deferred.png" width="600"/>
 
 ---
